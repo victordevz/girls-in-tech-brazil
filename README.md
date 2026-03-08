@@ -28,6 +28,7 @@ Este projeto busca **dar mais visibilidade às mulheres que compartilham conheci
 | **Silvia Coelho** | Comunidade • Inclusão | — | [Instagram](https://www.instagram.com/elasprogramam) | Criadora da comunidade Elas Programam, focada em fortalecer a presença feminina na tecnologia e promover inclusão na área. |
 | **Simara Conceição** | Frontend • Iniciantes | [YouTube](https://www.youtube.com/@queroserdev) | [Instagram](https://www.instagram.com/simara_conceicao) | Produz conteúdos para iniciantes em programação ensinando HTML, CSS, JavaScript, React, Git e carreira em tecnologia. |
 | **Stephanie Cardoso** | Carreira • Iniciantes | [YouTube](https://www.youtube.com/@dev_steph) | [Instagram](https://www.instagram.com/dev_steph) | Conteúdos focados em como entrar na área de programação e conquistar o primeiro emprego como desenvolvedor. |
+| **Tecnologirl** | Carreira • Iniciantes | [YouTube](https://www.youtube.com/@devtecnologirl) | [Instagram](https://www.instagram.com/tecnologirl) | Criadora de conteúdos relacionados à tecnologia com foco no público feminino, com o objetivo de informar, ensinar ou inspirar mulheres na área tech. |
 | **Vanessa Weber** | Programação • Educação | [YouTube](https://www.youtube.com/@codigofontetv) | [Instagram](https://instagram.com/codigofontetv) | Criadora do canal Código Fonte TV com conteúdos didáticos e divertidos sobre programação e tecnologia. |
 
 ---
