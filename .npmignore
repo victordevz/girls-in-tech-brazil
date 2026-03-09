@@ -10,3 +10,4 @@ docs-spec/
 .codex/
 *.log
 .env*
+coverage/
