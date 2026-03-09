@@ -98,7 +98,12 @@ const withNormalizedString = <T extends z.ZodType<string>>(schema: T) =>
     (value) => (typeof value === 'string' ? normalizeWhitespace(value) : value),
     schema,
   )
-const publicUrlSchema = withNormalizedString(z.string().url('Informe uma URL válida.'))
+const publicUrlSchema = withNormalizedString(
+  z
+    .string()
+    .url('Informe uma URL válida.')
+    .refine((value) => /^https?:\/\//i.test(value), 'Informe uma URL HTTP ou HTTPS válida.'),
+)
 const localAvatarPattern = /^\/images\/creators\/[a-z0-9-]+\.(?:jpg|jpeg|png|webp|avif|gif|svg)$/i
 
 const linksSchema = z
