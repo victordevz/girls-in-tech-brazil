@@ -1,34 +1,71 @@
-# Girls in Tech Brazil
+<div align="center">
 
-> Descubra quem está construindo o futuro tech no Brasil.
+<img src="https://img.shields.io/badge/Girls_in_Tech-Brazil-8b5cf6?style=for-the-badge&labelColor=1a1a2e" alt="Girls in Tech Brazil" />
 
-Vitrine curada de criadoras brasileiras de conteúdo sobre tecnologia — com perfis editoriais, filtros por categoria, busca e página de descoberta animada.
+<h1>Girls in Tech Brazil 🇧🇷</h1>
 
-## Sobre o projeto
+<p><strong>Descubra quem está construindo o futuro tech no Brasil.</strong></p>
+
+<p>Vitrine curada de criadoras brasileiras de conteúdo sobre tecnologia —<br/>com perfis editoriais, filtros por categoria, busca e página de descoberta animada.</p>
+
+<!-- Tecnologias -->
+<p>
+  <img src="https://img.shields.io/badge/Next.js_15-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React" />
+  <img src="https://img.shields.io/badge/TypeScript_5-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS_4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white" alt="Framer Motion" />
+  <img src="https://img.shields.io/badge/Zod_4-3E67B1?style=flat-square&logo=zod&logoColor=white" alt="Zod" />
+  <img src="https://img.shields.io/badge/Node.js_22-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js" />
+</p>
+
+<!-- Status -->
+<p>
+  <img src="https://img.shields.io/badge/deploy-GitHub_Pages-222222?style=flat-square&logo=githubpages&logoColor=white" alt="Deploy" />
+  <img src="https://img.shields.io/badge/páginas_estáticas-27-8b5cf6?style=flat-square" alt="27 páginas" />
+  <img src="https://img.shields.io/badge/criadoras-20-f43f5e?style=flat-square" alt="20 criadoras" />
+  <img src="https://img.shields.io/badge/PRs-bem--vindos-f59e0b?style=flat-square" alt="PRs welcome" />
+</p>
+
+</div>
+
+---
+
+## ✨ Sobre o projeto
 
 O **Girls in Tech Brazil** amplifica vozes femininas na tecnologia brasileira. Qualquer pessoa pode contribuir adicionando ou atualizando perfis via Pull Request — sem banco de dados, sem backend, tudo em arquivos JSON validados.
 
-- **20 criadoras** no dataset inicial
-- **5 rotas** estáticas geradas com Next.js App Router
-- Design system **Pulso BR Tech** — paleta violeta/rosa/dourado, fonte Outfit
-- Animações com Framer Motion: parallax, tilt 3D, contadores, scroll reveals
-- Deploy estático para GitHub Pages
+| | |
+|---|---|
+| 👩‍💻 **20 criadoras** | dataset inicial com perfis editoriais completos |
+| 🗺️ **5 rotas estáticas** | geradas com Next.js App Router |
+| 🎨 **Design system Pulso BR Tech** | paleta violeta / rosa / dourado, fonte Outfit |
+| 🎬 **Framer Motion** | parallax, tilt 3D, contadores animados, scroll reveals |
+| 🚀 **GitHub Pages** | deploy estático, sem servidor |
 
-## Pré-requisitos
+---
 
-- Node.js >= 22.0.0
-- npm >= 10.0.0
+## 🚀 Início rápido
 
-## Setup local
+**Pré-requisitos:** Node.js >= 22 e npm >= 10
 
 ```bash
+# 1. Clone o repositório
+git clone https://github.com/glaucia86/girls-in-tech-brazil.git
+cd girls-in-tech-brazil
+
+# 2. Instale as dependências
 npm install
+
+# 3. Suba o ambiente local
 npm run dev
 ```
 
 Aplicação disponível em `http://localhost:3000`
 
-## Rotas
+---
+
+## 🗂️ Rotas
 
 | Rota | Descrição |
 |---|---|
@@ -38,7 +75,9 @@ Aplicação disponível em `http://localhost:3000`
 | `/sobre` | Sobre o projeto |
 | `/contribuir` | Como contribuir |
 
-## Scripts
+---
+
+## 🛠️ Scripts
 
 ```bash
 npm run dev          # sobe o ambiente local
@@ -49,44 +88,34 @@ npm run type-check   # verifica tipagem sem emitir arquivos
 npm run format       # formata os arquivos com Prettier
 ```
 
-## Estrutura de diretórios
+---
+
+## 📁 Estrutura de diretórios
 
 ```text
 src/
-  app/            # rotas do App Router (Next.js)
-  components/     # componentes React reutilizáveis
-  data/creators/  # perfis em JSON — fonte de verdade
-  lib/            # utilitários de dados e animação
-  schemas/        # schema Zod do perfil de criadora
-  styles/         # CSS global e tokens do design system
+  app/             # rotas do App Router (Next.js)
+  components/      # 16 componentes React reutilizáveis
+  data/creators/   # perfis em JSON — fonte de verdade
+  lib/             # utilitários de dados, animação e hooks
+  schemas/         # schema Zod do perfil de criadora
+  styles/          # CSS global e tokens do design system
 public/
   images/creators/ # avatares locais (opcional)
 scripts/
   validate-data.ts # validação do dataset via Zod
 ```
 
-## Contribuindo
+---
+
+## 🤝 Contribuindo
 
 Quer adicionar seu perfil ou o de outra criadora? Leia o [CONTRIBUTING.md](CONTRIBUTING.md) para o fluxo completo.
 
 Antes de abrir um PR, rode localmente:
 
 ```bash
-npm run validate
-npm run lint
-npm run type-check
-npm run build
+npm run validate && npm run lint && npm run type-check && npm run build
 ```
 
-## Tecnologias
-
-- [Next.js 15](https://nextjs.org/) — App Router, static export
-- [React 19](https://react.dev/)
-- [TypeScript 5](https://www.typescriptlang.org/)
-- [Tailwind CSS 4](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [Zod 4](https://zod.dev/)
-
-## Histórico
-
-O conteúdo original da comunidade foi preservado em [`README-legacy.md`](README-legacy.md).
+> O histórico original da comunidade está preservado em [`README-legacy.md`](README-legacy.md).
