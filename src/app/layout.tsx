@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: '%s | Girls in Tech Brazil',
     default: 'Girls in Tech Brazil',
   },
-  description: 'Vitrine curada de mulheres referencias na tecnologia brasileira.',
+  description: 'Vitrine curada de mulheres referências na tecnologia brasileira.',
   metadataBase: new URL('https://glaucia86.github.io/girls-in-tech-brazil'),
 }
 

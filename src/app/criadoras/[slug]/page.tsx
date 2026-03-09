@@ -2,17 +2,17 @@ export async function generateStaticParams() {
   return [{ slug: 'exemplo' }]
 }
 
-export default async function CriadoraPage({
+export default function CriadoraPage({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: { slug: string }
 }) {
-  const { slug } = await params
+  const { slug } = params
 
   return (
     <main>
       <h1>Criadora: {slug}</h1>
-      <p>Pagina individual placeholder em construcao.</p>
+      <p>Página individual placeholder em construção.</p>
     </main>
   )
 }
