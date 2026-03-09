@@ -108,11 +108,75 @@ scripts/
 
 ---
 
-## 🤝 Contribuindo
+## ➕ Como adicionar uma criadora de conteúdo
 
-Quer adicionar seu perfil ou o de outra criadora? Leia o [CONTRIBUTING.md](CONTRIBUTING.md) para o fluxo completo.
+Conhece uma mulher incrível na tech brasileira que deveria estar aqui? O processo é simples:
 
-Antes de abrir um PR, rode localmente:
+**1. Faça um fork e clone o repositório**
+
+```bash
+git clone https://github.com/<seu-usuario>/girls-in-tech-brazil.git
+cd girls-in-tech-brazil
+git checkout -b add/nome-da-criadora
+```
+
+**2. Crie o arquivo de perfil**
+
+Copie o template e renomeie com o slug da criadora:
+
+```bash
+cp src/data/creators/_example.json src/data/creators/nome-da-criadora.json
+```
+
+**3. Preencha o perfil**
+
+```jsonc
+{
+  "slug": "nome-da-criadora",        // kebab-case, único no dataset
+  "name": "Nome Público",
+  "headline": "Frase curta de até 80 caracteres",
+  "bio": "Biografia entre 50 e 500 caracteres.",
+  "region": "SP",                    // sigla de UF (opcional)
+  "categories": ["Frontend"],        // veja categorias disponíveis abaixo
+  "tags": ["JavaScript", "React"],   // até 8 tags (opcional)
+  "links": {
+    "youtube": "https://youtube.com/@...",
+    "github":  "https://github.com/...",
+    "linkedin": "https://linkedin.com/in/..."
+  },
+  "avatar": "https://...",           // URL HTTPS ou /images/creators/... (opcional)
+  "featured": false
+}
+```
+
+<details>
+<summary>📋 Categorias disponíveis</summary>
+
+`Frontend` · `Backend` · `Full Stack` · `Mobile` · `Data` · `AI` · `Cloud` · `DevOps` · `Security` · `UX/UI` · `Career` · `Community` · `Open Source` · `Education` · `Product` · `Engineering Leadership`
+
+</details>
+
+**4. Valide e abra o PR**
+
+```bash
+npm install
+npm run validate   # valida o JSON contra o schema Zod
+npm run lint
+npm run type-check
+npm run build
+```
+
+Se tudo passar, faça push e abra um Pull Request usando o template do projeto. O CI vai revalidar automaticamente.
+
+> Guia completo com todas as regras dos campos em [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
+## 🤝 Contribuindo com código
+
+Encontrou um bug ou quer melhorar a plataforma? Abra uma issue ou um PR.
+
+Antes de submeter, rode localmente:
 
 ```bash
 npm run validate && npm run lint && npm run type-check && npm run build
