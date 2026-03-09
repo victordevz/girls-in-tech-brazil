@@ -1,0 +1,19 @@
+docs-spec/
+.codex/
+.specify/
+specs/
+# Runtime and build artifacts
+node_modules/
+.next/
+out/
+dist/
+build/
+*.log
+.env*
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
+coverage/

@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #7c3aed;
+  --color-brand-secondary: #ec4899;
+  --color-brand-accent: #f59e0b;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f9fafb;
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
+:root {
+  color: #111827;
+  background: var(--color-surface);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  background: linear-gradient(180deg, var(--color-surface), var(--color-surface-muted));
+}
+
+main {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 2rem 1rem;
+}
