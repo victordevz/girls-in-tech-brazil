@@ -1,22 +1,44 @@
-import Link from 'next/link'
+import { Suspense } from 'react'
 import { getAllCreators } from '@/lib/creators'
+import { DiscoveryExperience } from '@/components'
+
+function DiscoveryFallback() {
+  return (
+    <section className="panel space-y-5 p-5 sm:p-6">
+      <div className="h-12 rounded-[1.25rem] bg-[var(--color-surface-muted)]" />
+      <div className="flex flex-wrap gap-2">
+        {Array.from({ length: 6 }, (_, index) => (
+          <div
+            key={index}
+            className="h-10 w-28 rounded-full bg-[var(--color-surface-muted)]"
+          />
+        ))}
+      </div>
+      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {Array.from({ length: 6 }, (_, index) => (
+          <div key={index} className="panel min-h-64 animate-pulse bg-white/70 p-5" />
+        ))}
+      </div>
+    </section>
+  )
+}
 
 export default async function CriadorasPage() {
   const creators = await getAllCreators()
 
   return (
-    <main>
-      <h1>Criadoras</h1>
-      <p>Conheça algumas mulheres referências na tecnologia brasileira.</p>
-      <ul>
-        {creators.map((creator) => (
-          <li key={creator.slug}>
-            <Link href={`/criadoras/${creator.slug}/`}>
-              {creator.name} - {creator.headline}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </main>
+    <div className="page-shell section-gap space-y-8">
+      <section className="space-y-4">
+        <p className="eyebrow text-[var(--color-brand-700)]">Descoberta</p>
+        <h1 className="text-4xl font-black tracking-tight">Encontre criadoras por tema e formato</h1>
+        <p className="max-w-3xl leading-7 text-[var(--color-text-muted)]">
+          Use a busca, combine categorias e navegue por páginas sem perder o estado da URL.
+        </p>
+      </section>
+
+      <Suspense fallback={<DiscoveryFallback />}>
+        <DiscoveryExperience creators={creators} />
+      </Suspense>
+    </div>
   )
 }

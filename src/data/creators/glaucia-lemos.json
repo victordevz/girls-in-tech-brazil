@@ -1,0 +1,16 @@
+{
+  "slug": "glaucia-lemos",
+  "name": "Glaucia Lemos",
+  "headline": "A.I Developer especializada em JavaScript, TypeScript e Azure",
+  "bio": "A.I Developer especializada em JavaScript/TypeScript e Azure, com mais de 12 anos de experiência em backend e cloud. Já impactou mais de 100 mil desenvolvedores(as) globalmente por meio de artigos, open source, workshops, vídeos e conferências. Produz conteúdo sobre Azure OpenAI, LangChain.js, agentes, MCP e Azure Container Apps, ajudando a comunidade a criar aplicações modernas com IA no ecossistema JavaScript.",
+  "categories": ["AI", "Cloud", "Backend"],
+  "tags": ["JavaScript", "TypeScript", "Azure", "Cloud", "AI", "Open Source"],
+  "links": {
+    "youtube": "https://www.youtube.com/@GlauciaLemos",
+    "instagram": "https://www.instagram.com/glaucia.lemos.dev",
+    "linkedin": "https://www.linkedin.com/in/glaucialemos/",
+    "twitter": "https://x.com/glaucia_lemos86"
+  },
+  "avatar": "https://avatars.githubusercontent.com/u/1631477?v=4",
+  "featured": true
+}
