@@ -8,7 +8,9 @@
     "npm": ">=10.0.0"
   },
   "scripts": {
+    "predev": "npm run build",
     "dev": "next dev",
+    "prestart": "npm run build",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
