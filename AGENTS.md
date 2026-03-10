@@ -1,15 +1,15 @@
 # girls-in-tech-brazil Development Guidelines
 
-Last updated: 2026-03-09
+Last updated: 2026-03-10
 
 ## Quick Context
 
 - **Stack**: TypeScript 5.x, Node.js >= 22.x, Next.js 15.x App Router, React 19.x
 - **Styling**: Tailwind CSS 4.x — design system "Pulso BR Tech" (violet/rose/gold, Outfit font)
 - **Animations**: Framer Motion — parallax, 3D tilt spring, scroll reveals, animated counters
-- **Data layer**: Zod 4 schema + JSON files in `src/data/creators/` (20 creator profiles)
+- **Data layer**: Zod 4 schema + JSON files in `src/data/creators/`
 - **Validation flow**: `npm run validate` → `npm run lint` → `npm run type-check` → `npm run build`
-- **Deploy**: Static export (`output: 'export'`) for GitHub Pages — 27 static pages
+- **Deploy**: Static export (`output: 'export'`) for GitHub Pages
 
 ## Active Technologies
 
@@ -38,7 +38,7 @@ Default reading order for new tasks:
 
 ```text
 .github/
-  workflows/           # CI: validate + lint + type-check + build
+  workflows/           # CI + deploy workflows (PR validation and GitHub Pages publish)
 docs-spec/             # Epic documentation and PRDs
 public/
   images/creators/     # optional local avatars
@@ -111,21 +111,11 @@ src/
 
 ## Contribution Flow Notes
 
-- New creator contributions should follow `CONTRIBUTING.md`
-- PRs should use `.github/PULL_REQUEST_TEMPLATE.md`
-- PR validation runs through `.github/workflows/ci.yml`
+- New creator contributions should follow [CONTRIBUTING.md](CONTRIBUTING.md) guidelines
+- PRs should use [PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md)
+- PR validation runs through [ci.yml](.github/workflows/ci.yml)
+- Deploy to GitHub Pages runs through [deploy-pages.yml](.github/workflows/deploy-pages.yml) on push/merge to `main`
+- Review ownership for critical infra is enforced by [CODEOWNERS](.github/CODEOWNERS)
 - Branch protection expectations are documented but configured in GitHub settings
 
-## Recent Changes
 
-- Design system "Pulso BR Tech": full violet/rose/gold palette, Outfit font, 16 components restyled
-- Framer Motion layer: parallax hero, 3D tilt cards, scroll reveals, animated metric counters
-- CSS morphing blob background replacing circular aurora orbs
-- `001-epic-e3-spec`: discovery experience, search/filter, pagination, creator card grid
-- `001-creator-data-contrib`: typed creator schema, JSON dataset (20 profiles), validation script, CI workflow
-- `001-epic-e1-spec`: Next.js app foundation, App Router, Tailwind, ESLint, Prettier
-
-## Manual Additions
-
-<!-- MANUAL ADDITIONS START -->
-<!-- MANUAL ADDITIONS END -->

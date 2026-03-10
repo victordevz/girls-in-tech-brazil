@@ -13,7 +13,7 @@ Este projeto reúne perfis de mulheres referências em tecnologia no Brasil. A c
 
 ## Setup inicial do repositório (maintainers)
 
-Estas configuracoes sao obrigatorias uma unica vez para ativar o fluxo completo de CI/CD.
+Estas configurações são obrigatórias uma única vez para ativar o fluxo completo de CI/CD.
 
 ### 1. GitHub Pages
 
@@ -21,7 +21,7 @@ Estas configuracoes sao obrigatorias uma unica vez para ativar o fluxo completo 
 2. Em **Source**, selecione **GitHub Actions**.
 3. Salve.
 
-Depois disso, todo merge na `main` aciona o deploy automatico para:
+Depois disso, todo merge na `main` aciona o deploy automático para:
 `https://bullas.github.io/girls-in-tech-brazil/`
 
 ### 2. Branch protection da `main`

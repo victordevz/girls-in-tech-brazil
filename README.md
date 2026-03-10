@@ -54,7 +54,7 @@ O **Girls in Tech Brazil** amplifica vozes femininas na tecnologia brasileira. Q
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/glaucia86/girls-in-tech-brazil.git
+git clone https://github.com/bullas/girls-in-tech-brazil.git
 cd girls-in-tech-brazil
 
 # 2. Instale as dependências
@@ -86,6 +86,7 @@ Aplicação disponível em `http://localhost:3000`
 npm run dev          # sobe o ambiente local
 npm run build        # gera o build estático para produção
 npm run validate     # valida todos os perfis em src/data/creators/
+npm run validate:ci  # valida o dataset no modo CI (sem output interativo)
 npm run lint         # executa o lint
 npm run type-check   # verifica tipagem sem emitir arquivos
 npm run format       # formata os arquivos com Prettier
@@ -95,11 +96,14 @@ npm run format       # formata os arquivos com Prettier
 
 ## 🚀 Deploy
 
-O deploy e automatico via GitHub Actions. Todo merge na `main` publica o site no GitHub Pages em menos de 5 minutos.
+O deploy é automático via GitHub Actions. Todo merge na `main` publica o site no GitHub Pages em menos de 5 minutos.
 
 - **Workflow de CI:** `.github/workflows/ci.yml` (roda em todo PR para `main`)
 - **Workflow de Deploy:** `.github/workflows/deploy-pages.yml` (roda em todo merge/push para `main`)
 - **URL publicada:** `https://bullas.github.io/girls-in-tech-brazil/`
+
+> Maintainers: além dos workflows versionados, o repositório oficial precisa de setup em
+> `Settings -> Pages` (Source: GitHub Actions) e branch protection da `main`.
 
 ---
 
