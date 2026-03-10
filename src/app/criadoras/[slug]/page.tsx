@@ -4,7 +4,7 @@ import { getAllCreators, getCreatorBySlug, getCreatorSlugs } from '@/lib/creator
 import { Avatar, Badge, Breadcrumb, RelatedCreators, ShareButton } from '@/components'
 import { CONTENT_TYPE_META } from '@/lib/content-types'
 import { toCreatorDetail } from '@/lib/discovery'
-import { buildPersonJsonLd } from '@/lib/jsonld'
+import { buildPersonJsonLd, toSafeJsonLd } from '@/lib/jsonld'
 
 export async function generateStaticParams() {
   const slugs = await getCreatorSlugs()
@@ -62,7 +62,7 @@ export default async function CriadoraPage({ params }: { params: Promise<{ slug:
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildPersonJsonLd(creator)) }}
+        dangerouslySetInnerHTML={{ __html: toSafeJsonLd(buildPersonJsonLd(creator)) }}
       />
 
       {/* Gradient strip at top */}

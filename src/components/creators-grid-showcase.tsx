@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Pause, Play } from 'lucide-react'
 import { Avatar } from '@/components/avatar'
 import type { AvatarFallback } from '@/lib/avatar'
@@ -140,6 +140,15 @@ function PhotoSlot({ creators, startOffset, isPaused }: PhotoSlotProps) {
     startOffset % Math.max(creators.length, 1),
   )
   const [visible, setVisible] = useState(true)
+  const errorSwapTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (errorSwapTimerRef.current) {
+        clearTimeout(errorSwapTimerRef.current)
+      }
+    }
+  }, [])
 
   useEffect(() => {
     setVisible(true)
@@ -148,15 +157,20 @@ function PhotoSlot({ creators, startOffset, isPaused }: PhotoSlotProps) {
     // Each slot gets a unique show duration (3.2 – 5.0 s) for organic feel
     const showDuration = 3200 + (startOffset % 7) * 257
 
+    let swapTimer: ReturnType<typeof setTimeout> | undefined
     const showTimer = setTimeout(() => {
       setVisible(false)
-      const swapTimer = setTimeout(() => {
+      swapTimer = setTimeout(() => {
         setIndex((i) => (i + 1) % creators.length)
       }, 700)
-      return () => clearTimeout(swapTimer)
     }, showDuration)
 
-    return () => clearTimeout(showTimer)
+    return () => {
+      clearTimeout(showTimer)
+      if (swapTimer !== undefined) {
+        clearTimeout(swapTimer)
+      }
+    }
   }, [index, isPaused, creators.length, startOffset])
 
   if (creators.length === 0) return null
@@ -166,7 +180,13 @@ function PhotoSlot({ creators, startOffset, isPaused }: PhotoSlotProps) {
   // next creator so the slot never stays on an initials fallback.
   function handleError() {
     setVisible(false)
-    setTimeout(() => setIndex((i) => (i + 1) % creators.length), 300)
+    if (errorSwapTimerRef.current) {
+      clearTimeout(errorSwapTimerRef.current)
+    }
+    errorSwapTimerRef.current = setTimeout(() => {
+      setIndex((i) => (i + 1) % creators.length)
+      errorSwapTimerRef.current = null
+    }, 300)
   }
 
   return (
@@ -197,6 +217,15 @@ type Props = {
 export function CreatorsGridShowcase({ creators, className }: Props) {
   const [isPaused, setIsPaused] = useState(false)
 
+  // Distribute creators into exclusive per-slot pools so two slots can never
+  // show the same person at the same time (round-robin by creator index).
+  const NUM_PHOTO_SLOTS = GRID.filter((c) => c.type === 'photo').length
+  const slotPools = Array.from({ length: NUM_PHOTO_SLOTS }, (_, slotIdx) =>
+    creators.filter((_, creatorIdx) => creatorIdx % NUM_PHOTO_SLOTS === slotIdx),
+  )
+
+  let photoSlotCounter = 0
+
   return (
     <div className={cn('relative select-none', className)}>
       {/* Static 4×4 grid — positions are fixed, only photo content cycles */}
@@ -211,7 +240,7 @@ export function CreatorsGridShowcase({ creators, className }: Props) {
           >
             {cell.type === 'photo' ? (
               <PhotoSlot
-                creators={creators}
+                creators={slotPools[photoSlotCounter++]}
                 startOffset={cell.startOffset}
                 isPaused={isPaused}
               />

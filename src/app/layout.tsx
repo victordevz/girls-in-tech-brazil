@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Outfit } from 'next/font/google'
 import '@/styles/globals.css'
 import { Footer, Header, ScrollProgress } from '@/components'
+import { SITE_ORIGIN } from '@/lib/site'
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   },
   description:
     'Descubra as criadoras brasileiras de conteúdos sobre tecnologia com uma vitrine curada, filtros por categoria e perfis editoriais.',
-  metadataBase: new URL('https://bullas.github.io/girls-in-tech-brazil'),
+  metadataBase: SITE_ORIGIN,
   openGraph: {
     title: 'Girls in Tech Brazil',
     description:
