@@ -49,6 +49,14 @@ export function Footer() {
               {link.label}
             </Link>
           ))}
+          <a
+            href="https://github.com/Bullas/girls-in-tech-brazil"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-white/20 px-4 py-2 text-sm font-semibold transition hover:border-white/40 hover:bg-white/10"
+          >
+            Repositório GitHub
+          </a>
         </nav>
       </div>
     </footer>

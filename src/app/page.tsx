@@ -1,4 +1,4 @@
-import { CtaBanner, Hero, StatsBanner } from '@/components'
+import { Badge, CreatorCard, CtaBanner, Hero, StatsBanner } from '@/components'
 import { getAllCreators } from '@/lib/creators'
 import { toCreatorSummary } from '@/lib/discovery'
 import { SectionReveal } from '@/components/section-reveal'
@@ -7,6 +7,10 @@ import { SpotlightGrid } from '@/components/spotlight-grid'
 export default async function HomePage() {
   const creators = await getAllCreators()
   const spotlightPool = creators.map(toCreatorSummary)
+  const recentCreators = [...creators]
+    .sort((left, right) => Date.parse(right.createdAt) - Date.parse(left.createdAt))
+    .slice(0, 4)
+    .map(toCreatorSummary)
 
   return (
     <div className="page-shell">
@@ -42,10 +46,8 @@ export default async function HomePage() {
 
       <SectionReveal className="section-gap pt-0">
         <div className="mb-8 space-y-3">
-          <p className="eyebrow">Quem está por aqui</p>
-          <h2 className="text-3xl font-black tracking-tight">
-            Referências para inspirar e aprender
-          </h2>
+          <p className="eyebrow">Em destaque</p>
+          <h2 className="text-3xl font-black tracking-tight">Referências para inspirar e aprender</h2>
           <p className="max-w-2xl leading-7 text-[var(--color-text-muted)]">
             Perfis de mulheres que produzem conteúdo incrível sobre tecnologia — da programação ao
             design, da IA à carreira tech.
@@ -54,10 +56,25 @@ export default async function HomePage() {
         <SpotlightGrid creators={spotlightPool} />
       </SectionReveal>
 
+      <SectionReveal className="section-gap pt-0">
+        <div className="mb-8 space-y-3">
+          <Badge>Novo no catálogo</Badge>
+          <h2 className="text-3xl font-black tracking-tight">Recém-adicionadas</h2>
+          <p className="max-w-2xl leading-7 text-[var(--color-text-muted)]">
+            Conheça as criadoras de conteúdo e referências técnicas que chegaram recentemente na plataforma.
+          </p>
+        </div>
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {recentCreators.map((creator) => (
+            <CreatorCard key={creator.slug} creator={creator} highlightBadge="Novo" />
+          ))}
+        </div>
+      </SectionReveal>
+
       <CtaBanner
         title="Conhece alguma mulher referência tech que deveria estar aqui?"
         description="Este projeto cresce pela comunidade. Se você conhece uma mulher que compartilha conhecimento tech no Brasil e ainda não está no catálogo, abra um PR e ajude a ampliar o mapa."
-        actionLabel="Ver guia de contribuição"
+        actionLabel="Veja a guia de contribuição"
         actionHref="/contribuir/"
       />
     </div>

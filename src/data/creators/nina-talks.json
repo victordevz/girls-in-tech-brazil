@@ -1,6 +1,6 @@
 {
   "slug": "nina-talks",
-  "name": "Nina Talks",
+  "name": "Karina Tronkoski - Nina Talks",
   "headline": "UX, UI e design digital com contexto de tecnologia",
   "bio": "Nina Talks cria conteúdos sobre UI, UX, design e tecnologia, explorando a criação de experiências digitais com repertório acessível para quem atua ou quer atuar na área.",
   "categories": ["UX/UI", "Education"],
@@ -9,6 +9,7 @@
     "youtube": "https://www.youtube.com/channel/UCiePf3WjIZGshGRkioCUGgQ",
     "instagram": "https://www.instagram.com/ninatalks"
   },
+  "avatar": "https://avatars.githubusercontent.com/u/17415276?v=4",
   "createdAt": "2025-10-28",
   "featured": false
 }

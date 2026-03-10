@@ -16,9 +16,10 @@ import type { CreatorSummary } from '@/lib/discovery'
 
 type CreatorCardProps = {
   creator: CreatorSummary
+  highlightBadge?: string
 }
 
-export function CreatorCard({ creator }: CreatorCardProps) {
+export function CreatorCard({ creator, highlightBadge }: CreatorCardProps) {
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
 
@@ -66,6 +67,7 @@ export function CreatorCard({ creator }: CreatorCardProps) {
           size="md"
         />
         <div className="min-w-0 flex-1 space-y-2">
+          {highlightBadge ? <Badge>{highlightBadge}</Badge> : null}
           <div className="flex flex-wrap gap-2">
             {creator.contentTypes.slice(0, 3).map((contentType) => {
               const Icon = CONTENT_TYPE_META[contentType].icon

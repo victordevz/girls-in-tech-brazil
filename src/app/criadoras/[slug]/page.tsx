@@ -1,10 +1,10 @@
-import Link from 'next/link'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getAllCreators, getCreatorBySlug, getCreatorSlugs } from '@/lib/creators'
-import { Avatar, Badge, RelatedCreators, ShareButton } from '@/components'
+import { Avatar, Badge, Breadcrumb, RelatedCreators, ShareButton } from '@/components'
 import { CONTENT_TYPE_META } from '@/lib/content-types'
 import { toCreatorDetail } from '@/lib/discovery'
+import { buildPersonJsonLd } from '@/lib/jsonld'
 
 export async function generateStaticParams() {
   const slugs = await getCreatorSlugs()
@@ -26,6 +26,9 @@ export async function generateMetadata({
   return {
     title: { absolute: `${creator.name} · Girls in Tech Brazil` },
     description: creator.bio.slice(0, 155),
+    alternates: {
+      canonical: `/criadoras/${slug}/`,
+    },
     openGraph: {
       title: `${creator.name} — Girls in Tech Brazil`,
       description: creator.headline,
@@ -47,14 +50,20 @@ export default async function CriadoraPage({ params }: { params: Promise<{ slug:
   return (
     <div className="page-shell section-gap space-y-8">
       <section className="flex flex-wrap items-center justify-between gap-3">
-        <Link
-          href="/criadoras/"
-          className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border-soft)] bg-white px-4 py-2 text-sm font-semibold shadow-[var(--shadow-soft)] transition-colors hover:border-[var(--color-brand-300)]"
-        >
-          ← Criadoras
-        </Link>
+        <Breadcrumb
+          items={[
+            { label: 'Início', href: '/' },
+            { label: 'Criadoras', href: '/criadoras/' },
+            { label: detail.name },
+          ]}
+        />
         <ShareButton creatorName={detail.name} />
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildPersonJsonLd(creator)) }}
+      />
 
       {/* Gradient strip at top */}
       <div

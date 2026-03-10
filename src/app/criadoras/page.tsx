@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     description: 'Vitrine curada de mulheres técnicas da comunidade brasileira de tecnologia.',
     images: ['/images/og-default.png'],
   },
+  alternates: {
+    canonical: '/criadoras/',
+  },
 }
 
 function DiscoveryFallback() {

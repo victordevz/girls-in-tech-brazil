@@ -11,6 +11,7 @@ type AvatarProps = {
   size?: 'sm' | 'md' | 'lg' | 'xl'
   shape?: 'rounded' | 'circle'
   className?: string
+  onImageError?: () => void
 }
 
 const toneClassNames: Record<AvatarFallback['tone'], string> = {
@@ -40,6 +41,7 @@ export function Avatar({
   size = 'md',
   shape = 'rounded',
   className,
+  onImageError,
 }: AvatarProps) {
   const [imageFailed, setImageFailed] = useState(false)
 
@@ -60,7 +62,10 @@ export function Avatar({
           alt={name}
           className="h-full w-full object-cover"
           loading="lazy"
-          onError={() => setImageFailed(true)}
+          onError={() => {
+            setImageFailed(true)
+            onImageError?.()
+          }}
         />
       ) : (
         <div

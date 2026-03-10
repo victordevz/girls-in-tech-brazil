@@ -1,60 +1,72 @@
-import Link from 'next/link'
-import { Badge } from '@/components'
+import type { Metadata } from 'next'
+import { ContributeExperience } from '@/components/contribute-experience'
+
+export const metadata: Metadata = {
+  title: 'Como Contribuir',
+  description:
+    'Veja o passo a passo para contribuir com o catálogo Girls in Tech Brazil e abrir seu Pull Request com segurança.',
+  openGraph: {
+    title: 'Como Contribuir | Girls in Tech Brazil',
+    description:
+      'Aprenda o fluxo completo de contribuição: fork, clone, JSON, Pull Request e revisão.',
+    images: ['/images/og-default.png'],
+  },
+  alternates: {
+    canonical: '/contribuir/',
+  },
+}
 
 const STEPS = [
-  'Revise o schema em src/schemas/creator.schema.ts e os exemplos em src/data/creators/.',
-  'Adicione ou atualize um JSON válido com links públicos e categorias coerentes.',
-  'Execute npm run validate, npm run lint e npm run type-check antes de abrir o PR.',
+  {
+    title: 'Faça um fork',
+    description:
+      'Acesse o repositório no GitHub e clique em "Fork" para criar sua cópia pessoal do projeto.',
+  },
+  {
+    title: 'Clone e prepare',
+    description:
+      'Clone o seu fork localmente, execute npm install e crie uma branch com nome descritivo.',
+  },
+  {
+    title: 'Crie o perfil JSON',
+    description:
+      'Adicione um arquivo .json em src/data/creators/ seguindo o schema oficial e rode npm run validate.',
+  },
+  {
+    title: 'Abra o Pull Request',
+    description:
+      'Suba sua branch e abra um PR com o template do projeto, explicando quem é a criadora indicada.',
+  },
+  {
+    title: 'Aguarde a revisão',
+    description:
+      'Após aprovação e merge, o deploy é automático via GitHub Actions e o perfil entra no site.',
+  },
+]
+
+const FAQ = [
+  {
+    question: 'Preciso saber programar para contribuir?',
+    answer:
+      'Não é necessário conhecimento avançado. Saber editar um arquivo JSON e usar o básico do GitHub já é suficiente.',
+  },
+  {
+    question: 'Posso sugerir meu próprio perfil?',
+    answer:
+      'Sim. Você pode abrir um PR com seu próprio perfil, desde que o conteúdo seja técnico e os links estejam públicos e ativos.',
+  },
+  {
+    question: 'Quanto tempo leva para o PR ser revisado?',
+    answer:
+      'A revisão é feita por voluntárias e costuma acontecer em alguns dias. Acompanhe as notificações do GitHub.',
+  },
+  {
+    question: 'O que acontece se meu JSON tiver erro?',
+    answer:
+      'O CI executa npm run validate:ci automaticamente. Se houver erro, o check falha e aponta o que precisa ser corrigido.',
+  },
 ]
 
 export default function ContribuirPage() {
-  return (
-    <div className="page-shell section-gap space-y-8">
-      <section className="panel space-y-5 px-6 py-8 sm:px-8">
-        <Badge>Contribuição guiada</Badge>
-        <h1 className="text-4xl font-black tracking-tight">
-          Amplie o catálogo sem quebrar o contrato de dados.
-        </h1>
-        <p className="max-w-3xl leading-8 text-[var(--color-text-muted)]">
-          O fluxo atual prioriza consistência do dataset, revisão clara e compatibilidade com a
-          exportação estática. Antes de abrir uma contribuição, valide a estrutura do perfil e o
-          alinhamento com a curadoria do projeto.
-        </p>
-      </section>
-
-      <section className="grid gap-5 lg:grid-cols-[1fr_0.85fr]">
-        <div className="space-y-4">
-          {STEPS.map((step, index) => (
-            <article key={step} className="panel flex gap-4 p-5">
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[var(--color-brand-500)] font-black text-[var(--color-text-inverse)]">
-                {index + 1}
-              </div>
-              <p className="leading-7 text-[var(--color-text-base)]">{step}</p>
-            </article>
-          ))}
-        </div>
-
-        <aside className="panel space-y-4 p-5">
-          <h2 className="text-2xl font-black tracking-tight">Referências úteis</h2>
-          <p className="leading-7 text-[var(--color-text-muted)]">
-            Use a documentação existente para seguir o fluxo esperado pela validação e pelo PR
-            template.
-          </p>
-          <div className="flex flex-col gap-3">
-            <Link href="/criadoras/" className="rounded-full border px-4 py-3 font-semibold">
-              Explorar catálogo atual
-            </Link>
-            <a
-              href="https://github.com/glaucia86/girls-in-tech-brazil/blob/main/CONTRIBUTING.md"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border px-4 py-3 font-semibold"
-            >
-              Abrir CONTRIBUTING.md
-            </a>
-          </div>
-        </aside>
-      </section>
-    </div>
-  )
+  return <ContributeExperience steps={STEPS} faq={FAQ} />
 }
