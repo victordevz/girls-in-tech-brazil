@@ -8,7 +8,8 @@ type AvatarProps = {
   name: string
   imageUrl?: string | null
   fallback: AvatarFallback
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'sm' | 'md' | 'lg' | 'xl'
+  shape?: 'rounded' | 'circle'
   className?: string
 }
 
@@ -24,15 +25,29 @@ const sizeClassNames = {
   sm: 'size-12 text-sm',
   md: 'size-16 text-lg',
   lg: 'size-24 text-2xl',
+  xl: 'size-32 text-3xl',
 }
 
-export function Avatar({ name, imageUrl, fallback, size = 'md', className }: AvatarProps) {
+const shapeClassNames = {
+  rounded: 'rounded-[1.6rem]',
+  circle: 'rounded-full',
+}
+
+export function Avatar({
+  name,
+  imageUrl,
+  fallback,
+  size = 'md',
+  shape = 'rounded',
+  className,
+}: AvatarProps) {
   const [imageFailed, setImageFailed] = useState(false)
 
   return (
     <div
       className={cn(
-        'relative shrink-0 overflow-hidden rounded-[1.6rem] border border-[var(--color-brand-200)] shadow-[var(--shadow-soft)]',
+        'relative shrink-0 overflow-hidden border border-[var(--color-brand-200)] shadow-[var(--shadow-soft)]',
+        shapeClassNames[shape],
         sizeClassNames[size],
         className,
       )}

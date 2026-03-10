@@ -6,11 +6,7 @@ import { CreatorCard } from '@/components/creator-card'
 import { EmptyState } from '@/components/empty-state'
 import { Pagination } from '@/components/pagination'
 import { SearchBar } from '@/components/search-bar'
-import {
-  buildDiscoveryView,
-  DISCOVERY_PAGE_SIZE,
-  getDiscoveryCategories,
-} from '@/lib/discovery'
+import { buildDiscoveryView, DISCOVERY_PAGE_SIZE, getDiscoveryCategories } from '@/lib/discovery'
 import type { Creator } from '@/schemas/creator.schema'
 
 type DiscoveryExperienceProps = {
@@ -34,7 +30,9 @@ export function DiscoveryExperience({ creators }: DiscoveryExperienceProps) {
       params.set('q', discovery.filters.query)
     }
 
-    discovery.filters.selectedCategories.forEach((category) => params.append('categories', category))
+    discovery.filters.selectedCategories.forEach((category) =>
+      params.append('categories', category),
+    )
 
     if (discovery.filters.pagination.pageSize !== DISCOVERY_PAGE_SIZE) {
       params.set('pageSize', String(discovery.filters.pagination.pageSize))
@@ -57,8 +55,8 @@ export function DiscoveryExperience({ creators }: DiscoveryExperienceProps) {
         />
         <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-[var(--color-text-muted)]">
           <p>
-            {discovery.filters.pagination.totalResults} resultado(s) encontrados em{' '}
-            {discovery.filters.pagination.totalPages} página(s)
+            Exibindo {discovery.items.length} de {discovery.filters.pagination.totalResults}{' '}
+            criadoras
           </p>
           <p>Página atual: {discovery.filters.pagination.page}</p>
         </div>
@@ -68,7 +66,7 @@ export function DiscoveryExperience({ creators }: DiscoveryExperienceProps) {
         <EmptyState {...discovery.emptyState} />
       ) : (
         <section className="space-y-6">
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
             {discovery.items.map((creator) => (
               <CreatorCard key={creator.slug} creator={creator} />
             ))}

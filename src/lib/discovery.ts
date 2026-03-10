@@ -71,6 +71,29 @@ export type DiscoveryParams = {
   pageSize?: string
 }
 
+function sortCreatorsByEditorialPriority(creators: Creator[]) {
+  return [...creators].sort((left, right) => {
+    const featuredScore = Number(right.featured) - Number(left.featured)
+    if (featuredScore !== 0) {
+      return featuredScore
+    }
+
+    const rightDate = Date.parse(right.createdAt)
+    const leftDate = Date.parse(left.createdAt)
+    const dateScore = rightDate - leftDate
+    if (dateScore !== 0) {
+      return dateScore
+    }
+
+    const nameScore = left.name.localeCompare(right.name, 'pt-BR')
+    if (nameScore !== 0) {
+      return nameScore
+    }
+
+    return left.slug.localeCompare(right.slug, 'pt-BR')
+  })
+}
+
 function normalizeQuery(query: string | undefined) {
   return query?.trim() ?? ''
 }
@@ -176,12 +199,13 @@ export function buildDiscoveryView(creators: Creator[], params: DiscoveryParams)
   const filteredCreators = creators.filter(
     (creator) => matchesQuery(creator, query) && matchesCategories(creator, selectedCategories),
   )
+  const sortedCreators = sortCreatorsByEditorialPriority(filteredCreators)
 
-  const totalResults = filteredCreators.length
+  const totalResults = sortedCreators.length
   const totalPages = Math.max(Math.ceil(totalResults / pageSize), 1)
   const page = Math.min(normalizePage(params.page), totalPages)
   const offset = (page - 1) * pageSize
-  const items = filteredCreators.slice(offset, offset + pageSize).map(toCreatorSummary)
+  const items = sortedCreators.slice(offset, offset + pageSize).map(toCreatorSummary)
 
   const pagination: PaginationState = {
     page,
@@ -200,19 +224,56 @@ export function buildDiscoveryView(creators: Creator[], params: DiscoveryParams)
       pagination,
     },
     emptyState:
-      items.length === 0
-        ? {
-            title: 'Nenhuma criadora encontrada',
-            description:
-              'Tente ajustar a busca ou remover alguns filtros para ampliar os resultados.',
-            actionLabel: query || selectedCategories.length > 0 ? 'Limpar filtros' : null,
-            actionHref: query || selectedCategories.length > 0 ? '/criadoras/' : null,
-          }
-        : null,
+      items.length === 0 ? buildEmptyState(query, selectedCategories, creators.length) : null,
+  }
+}
+
+function buildEmptyState(
+  query: string,
+  selectedCategories: Category[],
+  totalCreators: number,
+): EmptyStateView {
+  if (totalCreators === 0) {
+    return {
+      title: 'Comunidade em crescimento',
+      description: 'Ainda não há perfis publicados. Volte em breve ou contribua com uma indicação.',
+      actionLabel: 'Contribuir',
+      actionHref: '/contribuir/',
+    }
+  }
+
+  const hasFilters = query.length > 0 || selectedCategories.length > 0
+
+  return {
+    title: 'Nenhuma criadora encontrada',
+    description: 'Tente ajustar a busca ou remover alguns filtros para ampliar os resultados.',
+    actionLabel: hasFilters ? 'Limpar filtros' : null,
+    actionHref: hasFilters ? '/criadoras/' : null,
   }
 }
 
 export function getDiscoveryCategories(creators: Creator[]) {
   const available = new Set(creators.flatMap((creator) => creator.categories))
   return CREATOR_CATEGORIES.filter((category) => available.has(category))
+}
+
+export function getRelatedCreators(
+  creators: Creator[],
+  currentSlug: string,
+  categories: Category[],
+  limit = 3,
+) {
+  if (categories.length === 0 || limit <= 0) {
+    return []
+  }
+
+  const related = creators.filter((creator) => {
+    if (creator.slug === currentSlug) {
+      return false
+    }
+
+    return creator.categories.some((category) => categories.includes(category))
+  })
+
+  return sortCreatorsByEditorialPriority(related).slice(0, limit).map(toCreatorSummary)
 }

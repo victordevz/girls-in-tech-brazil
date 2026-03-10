@@ -67,7 +67,6 @@ export function CreatorCard({ creator }: CreatorCardProps) {
         />
         <div className="min-w-0 flex-1 space-y-2">
           <div className="flex flex-wrap gap-2">
-            {creator.featured ? <Badge variant="featured">✨ Destaque</Badge> : null}
             {creator.contentTypes.slice(0, 3).map((contentType) => {
               const Icon = CONTENT_TYPE_META[contentType].icon
 

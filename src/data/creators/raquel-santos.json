@@ -1,0 +1,14 @@
+{
+  "slug": "raquel-santos",
+  "name": "Raquel Santos",
+  "headline": "Conteúdos de desenvolvimento Android com teoria e prática para iniciantes",
+  "bio": "Raquel Santos é criadora do projeto codesbyrachel e compartilha conteúdos sobre desenvolvimento Android voltados para quem está começando. Seus materiais combinam teoria e prática para acelerar o aprendizado de mobile.",
+  "categories": ["Mobile", "Education"],
+  "tags": ["Android", "Iniciantes", "Mobile"],
+  "links": {
+    "youtube": "https://www.youtube.com/@codesbyrachel",
+    "instagram": "https://www.instagram.com/codesbyrachel"
+  },
+  "createdAt": "2026-03-06",
+  "featured": false
+}
