@@ -7,6 +7,7 @@
 <p><strong>Descubra quem está construindo o futuro tech no Brasil.</strong></p>
 
 <p>Vitrine curada de criadoras brasileiras de conteúdos técnicos sobre tecnologia —<br/>com perfis editoriais, filtros por categoria, busca e página de descoberta animada.</p>
+<p>🌐 <strong><a href="https://bullas.github.io/girls-in-tech-brazil/">bullas.github.io/girls-in-tech-brazil</a></strong> — site publicado</p>
 
 <!-- Tecnologias -->
 <p>
@@ -21,6 +22,8 @@
 
 <!-- Status -->
 <p>
+  <img src="https://github.com/bullas/girls-in-tech-brazil/actions/workflows/ci.yml/badge.svg" alt="CI" />
+  <img src="https://github.com/bullas/girls-in-tech-brazil/actions/workflows/deploy-pages.yml/badge.svg" alt="Deploy Workflow" />
   <img src="https://img.shields.io/badge/deploy-GitHub_Pages-222222?style=flat-square&logo=githubpages&logoColor=white" alt="Deploy" />
   <img src="https://img.shields.io/badge/páginas_estáticas-27-8b5cf6?style=flat-square" alt="27 páginas" />
   <img src="https://img.shields.io/badge/criadoras-23-f43f5e?style=flat-square" alt="23 criadoras" />
@@ -87,6 +90,16 @@ npm run lint         # executa o lint
 npm run type-check   # verifica tipagem sem emitir arquivos
 npm run format       # formata os arquivos com Prettier
 ```
+
+---
+
+## 🚀 Deploy
+
+O deploy e automatico via GitHub Actions. Todo merge na `main` publica o site no GitHub Pages em menos de 5 minutos.
+
+- **Workflow de CI:** `.github/workflows/ci.yml` (roda em todo PR para `main`)
+- **Workflow de Deploy:** `.github/workflows/deploy-pages.yml` (roda em todo merge/push para `main`)
+- **URL publicada:** `https://bullas.github.io/girls-in-tech-brazil/`
 
 ---
 

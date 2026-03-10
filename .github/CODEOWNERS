@@ -1,1 +1,8 @@
-* @bullas
+# Arquivos de infraestrutura e configuração crítica exigem revisão do maintainer.
+# Contribuições de dados em src/data/creators/ ficam livres de CODEOWNER dedicado.
+
+/.github/workflows/ @bullas
+/src/schemas/ @bullas
+/next.config.ts @bullas
+/package.json @bullas
+/tsconfig.json @bullas

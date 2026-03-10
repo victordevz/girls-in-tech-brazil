@@ -11,6 +11,35 @@ Este projeto reúne perfis de mulheres referências em tecnologia no Brasil. A c
 - Git
 - Conta no GitHub
 
+## Setup inicial do repositório (maintainers)
+
+Estas configuracoes sao obrigatorias uma unica vez para ativar o fluxo completo de CI/CD.
+
+### 1. GitHub Pages
+
+1. Abra `Settings -> Pages` no repositório.
+2. Em **Source**, selecione **GitHub Actions**.
+3. Salve.
+
+Depois disso, todo merge na `main` aciona o deploy automatico para:
+`https://bullas.github.io/girls-in-tech-brazil/`
+
+### 2. Branch protection da `main`
+
+Em `Settings -> Branches -> main`, habilite:
+
+- `Require a pull request before merging`
+- `Require status checks to pass before merging`
+- check obrigatório do job `validate` (workflow `CI - Validacao de PR`)
+- `Require branches to be up to date before merging` (recomendado)
+
+### 3. Fluxo operacional esperado
+
+1. Contribuidora abre PR para `main`.
+2. `ci.yml` roda (`validate:ci`, `lint`, `type-check`, `build`).
+3. PR aprovado e mergeado.
+4. `deploy-pages.yml` publica automaticamente no GitHub Pages.
+
 ## Fluxo rápido para adicionar seu perfil
 
 1. Faça um fork do repositório.
