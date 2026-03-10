@@ -1,0 +1,15 @@
+{
+  "slug": "luiza-vieira-vbluuiza",
+  "name": "Luiza Vieira - vbluuiza",
+  "headline": "Conteúdo prático sobre engenharia de dados e Python no ecossistema tech",
+  "bio": "Luiza Vieira, conhecida como vbluuiza, produz conteúdos sobre engenharia de dados com foco em Python, fundamentos de dados e desenvolvimento de carreira. Seu trabalho ajuda pessoas iniciantes e em transição a entender melhor o dia a dia da área.",
+  "categories": ["Data", "Education"],
+  "tags": ["Python", "Engenharia De Dados", "Carreira"],
+  "links": {
+    "youtube": "https://www.youtube.com/@vbluuiza",
+    "instagram": "https://www.instagram.com/vbluuiza"
+  },
+  "avatar": "https://avatars.githubusercontent.com/u/176243015?v=4",
+  "createdAt": "2026-03-05",
+  "featured": false
+}

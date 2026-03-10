@@ -1,0 +1,15 @@
+{
+  "slug": "rafella-ballerine",
+  "name": "Rafella Ballerine",
+  "headline": "Frontend acessível com ensino técnico e visão de carreira",
+  "bio": "Rafella Ballerine produz conteúdos focados em tornar a tecnologia mais acessível, combinando ensino de desenvolvimento frontend com orientações estratégicas para carreira em tecnologia.",
+  "categories": ["Frontend", "Career"],
+  "tags": ["Frontend", "Carreira"],
+  "links": {
+    "youtube": "https://www.youtube.com/@rafaellaballerini",
+    "instagram": "https://www.instagram.com/rafaballerini"
+  },
+  "avatar": "https://avatars.githubusercontent.com/u/54322854?v=4",
+  "createdAt": "2026-02-05",
+  "featured": true
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "mikaeri-ohana",
+  "name": "Mikaeri Ohana",
+  "headline": "IA, machine learning e dados com foco em carreira",
+  "bio": "Mikaeri Ohana publica conteúdos sobre inteligência artificial, machine learning, ciência de dados e carreira em tecnologia, ajudando a transformar conceitos em próximos passos concretos.",
+  "categories": ["AI", "Data"],
+  "tags": ["Machine Learning", "Carreira"],
+  "links": {
+    "youtube": "https://www.youtube.com/@ExplicaMi",
+    "instagram": "https://instagram.com/explicami"
+  },
+  "avatar": "https://avatars.githubusercontent.com/u/17110848?v=4",
+  "createdAt": "2025-09-29",
+  "featured": false
+}

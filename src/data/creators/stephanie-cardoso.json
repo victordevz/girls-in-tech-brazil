@@ -1,0 +1,15 @@
+{
+  "slug": "stephanie-cardoso",
+  "name": "Stephanie Cardoso",
+  "headline": "Primeiros passos em programação e entrada no mercado",
+  "bio": "Stephanie Cardoso publica conteúdos focados em como entrar na área de programação, construir repertório inicial e conquistar o primeiro emprego como desenvolvedora.",
+  "categories": ["Career", "Education"],
+  "tags": ["Iniciantes", "Primeiro Emprego"],
+  "links": {
+    "youtube": "https://www.youtube.com/@dev_steph",
+    "instagram": "https://www.instagram.com/dev_steph"
+  },
+  "avatar": "https://avatars.githubusercontent.com/u/130056004?v=4",
+  "createdAt": "2025-12-18",
+  "featured": false
+}

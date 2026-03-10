@@ -1,0 +1,15 @@
+{
+  "slug": "karol-attekita",
+  "name": "Karol Attekita",
+  "headline": "Tecnologia, tendências e carreira para navegar o mercado",
+  "bio": "Karol Attekita produz conteúdos sobre tecnologia, tendências do mercado e carreira em desenvolvimento, ajudando a interpretar o ecossistema tech com visão estratégica e acessível.",
+  "categories": ["Career", "Community"],
+  "tags": ["Mercado", "Tecnologia"],
+  "links": {
+    "youtube": "https://www.youtube.com/@attekitadev",
+    "instagram": "https://instagram.com/attekitadev"
+  },
+  "avatar": "https://avatars.githubusercontent.com/u/9170047?v=4",
+  "createdAt": "2026-02-25",
+  "featured": true
+}

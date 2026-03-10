@@ -1,0 +1,15 @@
+{
+  "slug": "michelli-brito",
+  "name": "Michelli Brito",
+  "headline": "Arquitetura de software e Java para sistemas modernos",
+  "bio": "Michelli Brito compartilha conteúdos sobre arquitetura de software, microsserviços e desenvolvimento Java com o ecossistema Spring, conectando fundamentos com aplicações de mercado.",
+  "categories": ["Backend", "Engineering Leadership"],
+  "tags": ["Arquitetura", "Java"],
+  "links": {
+    "youtube": "https://www.youtube.com/@MichelliBrito",
+    "instagram": "https://www.instagram.com/brito_michelli"
+  },
+  "avatar": "https://avatars.githubusercontent.com/u/23387339?v=4",
+  "createdAt": "2025-08-17",
+  "featured": false
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "adriana-saty",
+  "name": "Adriana Saty",
+  "headline": "Programação, carreira e vivências reais no mundo tech",
+  "bio": "Adriana Saty compartilha conteúdos sobre programação, tecnologia e lifestyle de desenvolvedora, conectando aprendizados práticos da carreira com reflexões sobre o dia a dia no mercado.",
+  "categories": ["Backend", "Career"],
+  "tags": ["Programação", "Carreira"],
+  "links": {
+    "youtube": "https://www.youtube.com/c/AdrianaSaty",
+    "instagram": "https://www.instagram.com/adriana.saty"
+  },
+  "avatar": "https://avatars.githubusercontent.com/u/5349412?v=4",
+  "createdAt": "2025-07-05",
+  "featured": false
+}

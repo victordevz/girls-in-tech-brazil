@@ -1,0 +1,16 @@
+{
+  "slug": "exemplo-criadora",
+  "name": "Exemplo Criadora",
+  "headline": "Educadora tech e criadora de conteúdo sobre carreira",
+  "bio": "Perfil fictício usado como referência para mostrar o formato esperado dos dados de uma criadora no projeto Girls in Tech Brazil.",
+  "region": "SP",
+  "categories": ["Education", "Career"],
+  "tags": ["Tecnologia", "Carreira"],
+  "links": {
+    "youtube": "https://www.youtube.com/@exemplocriadora",
+    "instagram": "https://www.instagram.com/exemplocriadora"
+  },
+  "avatar": "/images/creators/exemplo-criadora.jpg",
+  "createdAt": "2025-01-01",
+  "featured": false
+}

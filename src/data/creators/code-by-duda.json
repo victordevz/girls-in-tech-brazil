@@ -1,0 +1,15 @@
+{
+  "slug": "code-by-duda",
+  "name": "Code by Duda",
+  "headline": "Carreira em tecnologia, faculdade e vida real na área",
+  "bio": "Code by Duda produz conteúdos sobre faculdade de Engenharia de Software, carreira em tecnologia e reflexões práticas sobre formação, mercado e desenvolvimento profissional na área de TI.",
+  "categories": ["Career", "Education"],
+  "tags": ["Faculdade", "Carreira"],
+  "links": {
+    "youtube": "https://www.youtube.com/@CodebyDuda",
+    "instagram": "https://www.instagram.com/codebyduda"
+  },
+  "avatar": "https://avatars.githubusercontent.com/u/49242526?v=4",
+  "createdAt": "2025-07-24",
+  "featured": false
+}

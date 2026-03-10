@@ -1,0 +1,15 @@
+{
+  "slug": "vanessa-weber",
+  "name": "Vanessa Weber",
+  "headline": "Educação em programação com linguagem didática e divertida",
+  "bio": "Vanessa Weber compartilha conteúdos didáticos e divertidos sobre programação e tecnologia, ajudando a comunidade a aprender conceitos técnicos com mais clareza e contexto.",
+  "categories": ["Education", "Community"],
+  "tags": ["Educação", "Programação"],
+  "links": {
+    "youtube": "https://www.youtube.com/@codigofontetv",
+    "instagram": "https://instagram.com/codigofontetv"
+  },
+  "avatar": "https://avatars.githubusercontent.com/u/25768509?v=4",
+  "createdAt": "2025-07-29",
+  "featured": false
+}

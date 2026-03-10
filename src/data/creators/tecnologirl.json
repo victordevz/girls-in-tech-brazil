@@ -1,0 +1,14 @@
+{
+  "slug": "tecnologirl",
+  "name": "Tecnologirl",
+  "headline": "Conteúdo tech para informar, ensinar e inspirar mulheres",
+  "bio": "Tecnologirl cria conteúdos relacionados à tecnologia com foco no público feminino, buscando informar, ensinar e inspirar mulheres que desejam construir caminho na área tech.",
+  "categories": ["Career", "Community"],
+  "tags": ["Mulheres", "Tecnologia"],
+  "links": {
+    "youtube": "https://www.youtube.com/@devtecnologirl",
+    "instagram": "https://www.instagram.com/tecnologirl"
+  },
+  "createdAt": "2025-08-30",
+  "featured": false
+}

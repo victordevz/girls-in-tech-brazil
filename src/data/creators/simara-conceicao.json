@@ -1,0 +1,15 @@
+{
+  "slug": "simara-conceicao",
+  "name": "Simara Conceição",
+  "headline": "Frontend para iniciantes com HTML, CSS e JavaScript",
+  "bio": "Simara Conceição produz conteúdos para iniciantes em programação, ensinando HTML, CSS, JavaScript, React, Git e fundamentos de carreira para entrada consistente na área.",
+  "categories": ["Frontend", "Education"],
+  "tags": ["Iniciantes", "React"],
+  "links": {
+    "youtube": "https://www.youtube.com/@queroserdev",
+    "instagram": "https://www.instagram.com/simara_conceicao"
+  },
+  "avatar": "https://avatars.githubusercontent.com/u/50921892?v=4",
+  "createdAt": "2025-11-10",
+  "featured": false
+}

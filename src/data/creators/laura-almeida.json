@@ -1,0 +1,15 @@
+{
+  "slug": "laura-almeida",
+  "name": "Laura Almeida",
+  "headline": "Cientista de dados focada em AI e Machine Learning no setor de seguros",
+  "bio": "Laura Almeida compartilha conteúdos sobre ciência de dados, inteligência artificial e carreira em tecnologia. Atua com soluções de machine learning para o mercado de seguros e publica materiais educativos para quem quer evoluir em dados e AI.",
+  "categories": ["AI", "Data"],
+  "tags": ["Data Science", "Machine Learning", "AI", "Seguros"],
+  "links": {
+    "youtube": "https://www.youtube.com/@lauradatatalks",
+    "instagram": "https://instagram.com/laura_data_talks"
+  },
+  "avatar": "https://instagram.fstu2-1.fna.fbcdn.net/v/t51.82787-19/554630704_18076778144318913_7435574774546257087_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fstu2-1.fna.fbcdn.net&_nc_cat=109&_nc_oc=Q6cZ2QFnhKnDYkF2b6HO1lKUcm08GlKqKgJnJNBpoHgTvg3DWiQ0dog96MbNTzEm62bLgyVwadR1Y1JjMEfUZ4bg0Zai&_nc_ohc=840pCLSKvBsQ7kNvwFt6LyD&_nc_gid=qz-Mh1_pIxKA56GSYe7p2Q&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfxwX3B_78d-Jwx2HzdOhh8XV5bbPeuEqkBynDB1o-Udlw&oe=69B61B98&_nc_sid=8b3546",
+  "createdAt": "2026-03-04",
+  "featured": false
+}

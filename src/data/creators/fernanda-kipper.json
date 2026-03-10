@@ -1,0 +1,15 @@
+{
+  "slug": "fernanda-kipper",
+  "name": "Fernanda Kipper",
+  "headline": "Projetos práticos, estudos e evolução constante na programação",
+  "bio": "Fernanda Kipper compartilha conteúdos práticos sobre programação, construção de projetos, organização de estudos e evolução de carreira para quem quer crescer de forma consistente em tecnologia.",
+  "categories": ["Backend", "Education"],
+  "tags": ["Projetos", "Programação"],
+  "links": {
+    "youtube": "https://www.youtube.com/@FernandaKipper",
+    "instagram": "https://www.instagram.com/kipper.dev"
+  },
+  "avatar": "https://avatars.githubusercontent.com/u/61896274?v=4",
+  "createdAt": "2025-10-03",
+  "featured": false
+}
