@@ -38,9 +38,8 @@
 
 O **Girls in Tech Brazil** amplifica vozes femininas na tecnologia brasileira. Qualquer pessoa pode contribuir adicionando ou atualizando perfis via Pull Request — sem banco de dados, sem backend, tudo em arquivos JSON validados.
 
-| | |
+| Info | O que foi feito |
 |---|---|
-| 👩‍💻 **23 criadoras** | dataset inicial com perfis editoriais completos |
 | 🗺️ **5 rotas estáticas** | geradas com Next.js App Router |
 | 🎨 **Design system Pulso BR Tech** | paleta violeta / rosa / dourado, fonte Outfit |
 | 🎬 **Framer Motion** | parallax, tilt 3D, contadores animados, scroll reveals |
